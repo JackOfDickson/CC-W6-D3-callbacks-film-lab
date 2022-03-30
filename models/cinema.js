@@ -25,12 +25,22 @@ Cinema.prototype.getFilmsByGenre = function(genre) {
 }
 
 Cinema.prototype.isThereFilmInYear = function(year) {
-  filmYears = []
+  filmYears = [];
     this.films.forEach((film) => {
       filmYears.push(film.year);
     })
   const result = filmYears.includes(year);
   return result;
 };
+
+Cinema.prototype.allFilmsOverLegnth = function (time) {
+  filmTimes = [];
+  this.films.forEach((film) => {
+    filmYears.push(film.length);
+  })
+  const isLongerThan = length => length < time
+  const result = filmTimes.every(isLongerThan);
+  return result;
+}
 
 module.exports = Cinema;
