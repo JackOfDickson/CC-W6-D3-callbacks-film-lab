@@ -57,5 +57,8 @@ describe('Cinema', function () {
     const actual = cinema.totalRunningTime();
     assert.strictEqual(actual, 622)
   });
-
+  it('should be able to filter films by year', function () {
+    const action = cinema.comprehensiveSearch('year', 2017)
+    assert.deepStrictEqual(actual, [bladeRunner, dunkirk, trainspotting])
+  })
 });

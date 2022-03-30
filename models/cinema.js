@@ -54,4 +54,15 @@ Cinema.prototype.totalRunningTime = function() {
   return result
 }
 
+Cinema.prototype.comprehensiveSearch = function(datatype, value) {
+
+
+
+
+  const result = this.films.datatype.filter((film) => {
+    return film.datatype == value;
+  });
+  return result
+}
+
 module.exports = Cinema;
