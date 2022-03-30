@@ -36,11 +36,22 @@ Cinema.prototype.isThereFilmInYear = function(year) {
 Cinema.prototype.allFilmsOverLegnth = function (time) {
   filmTimes = [];
   this.films.forEach((film) => {
-    filmYears.push(film.length);
+    filmTimes.push(film.length);
   })
-  const isLongerThan = length => length < time
+  const isLongerThan = length => length > time
   const result = filmTimes.every(isLongerThan);
   return result;
+}
+
+Cinema.prototype.totalRunningTime = function() {
+  filmTimes = [];
+  this.films.forEach((film) => {
+    filmTimes.push(film.length);
+  })
+  const result = filmTimes.reduce((runningTotal, number) => {
+    return runningTotal + number;
+  }, 0);
+  return result
 }
 
 module.exports = Cinema;
