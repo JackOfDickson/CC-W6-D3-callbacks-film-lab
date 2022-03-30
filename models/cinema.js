@@ -24,4 +24,13 @@ Cinema.prototype.getFilmsByGenre = function(genre) {
   return result
 }
 
+Cinema.prototype.isThereFilmInYear = function(year) {
+  filmYears = []
+    this.films.forEach((film) => {
+      filmYears.push(film.year);
+    })
+  const result = filmYears.includes(year);
+  return result;
+};
+
 module.exports = Cinema;
